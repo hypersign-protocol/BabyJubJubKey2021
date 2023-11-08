@@ -103,6 +103,8 @@ class BabyJubJubKeys2021 extends LDKeyPair {
       return new BabyJubJubKeys2021({
         publicKey: PublicKey.newFromHex(publicKey),
         privateKey: new PrivateKey(Buffer.from(privateKeyT)),
+        id: options.options?.id,
+        controller: options.options?.controller,
       });
     } else {
       return new BabyJubJubKeys2021({
