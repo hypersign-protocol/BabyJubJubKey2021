@@ -23,13 +23,12 @@ declare class BabyJubJubKeys2021 extends LDKeyPair {
     static generate(options?: {
         id?: string;
         controller?: string;
-        publicKeyMultibase?: string;
     }): Promise<BabyJubJubKeys2021>;
     static multibaseToKey(key: string): Uint8Array;
     static fromKeys(options: {
         publicKeyMultibase: string;
         privateKeyMultibase?: string;
-        options: {
+        options?: {
             id: any;
             controller: any;
         };

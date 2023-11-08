@@ -73,7 +73,6 @@ class BabyJubJubKeys2021 extends LDKeyPair {
   static async generate(options?: {
     id?: string;
     controller?: string;
-    publicKeyMultibase?: string;
   }): Promise<BabyJubJubKeys2021> {
     const mnemonic = await generateMnemonic(256);
     return this.from(mnemonic, options);
@@ -85,7 +84,7 @@ class BabyJubJubKeys2021 extends LDKeyPair {
   static fromKeys(options: {
     publicKeyMultibase: string;
     privateKeyMultibase?: string;
-    options: {
+    options?: {
       id: any;
       controller: any;
     };
@@ -108,7 +107,8 @@ class BabyJubJubKeys2021 extends LDKeyPair {
     } else {
       return new BabyJubJubKeys2021({
         publicKey: PublicKey.newFromHex(publicKey),
-        ...options.options,
+        id: options.options?.id,
+        controller: options.options?.controller,
       });
     }
   }
