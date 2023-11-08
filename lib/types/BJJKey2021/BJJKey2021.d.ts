@@ -29,7 +29,7 @@ declare class BabyJubJubKeys2021 extends LDKeyPair {
     static fromKeys(options: {
         publicKeyMultibase: string;
         privateKeyMultibase?: string;
-    }): BabyJubJubKeys2021 | undefined;
+    }): BabyJubJubKeys2021;
     static from(mnemonic: string, options?: {
         id?: any;
         controller?: any;

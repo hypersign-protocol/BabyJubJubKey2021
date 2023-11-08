@@ -85,7 +85,7 @@ class BabyJubJubKeys2021 extends LDKeyPair {
   static fromKeys(options: {
     publicKeyMultibase: string;
     privateKeyMultibase?: string;
-  }) {
+  }): BabyJubJubKeys2021 {
     if (!options.publicKeyMultibase) {
       throw new Error("publicKeyMultibase is required");
     }
@@ -100,6 +100,10 @@ class BabyJubJubKeys2021 extends LDKeyPair {
       return new BabyJubJubKeys2021({
         publicKey: PublicKey.newFromHex(publicKey),
         privateKey: new PrivateKey(Buffer.from(privateKeyT)),
+      });
+    } else {
+      return new BabyJubJubKeys2021({
+        publicKey: PublicKey.newFromHex(publicKey),
       });
     }
   }
