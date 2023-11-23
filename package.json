@@ -25,8 +25,6 @@
     "@iden3/js-jsonld-merklization": "^1.1.2",
     "bip39": "^3.1.0",
     "crypto-ld": "^6.0.0",
-
-
     "multibase": "^4.0.6"
   }
 }
